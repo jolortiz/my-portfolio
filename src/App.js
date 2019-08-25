@@ -1,13 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import backarrow from './assets/back-arrow.svg';
+import rightarrow from './assets/right-arrow.svg';
 import './App.css';
 
 export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h1>This is my dev branch</h1>
+        <div className="container">
+          <div className="panel">
+            <img className="panel__button" src={backarrow}/>
+          </div>
+          <div className="carousel">
+            <h1>This is my dev branch</h1>
+          </div>
+          <div className="panel">
+            <img className="panel__button" src={rightarrow}/>
+          </div>
         </div>
       </div>
     );
