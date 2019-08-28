@@ -17,14 +17,14 @@ a {
   text-decoration: none;
 }
 a:link {
-  color: cornflowerblue;
+  color: #fcb900;
 }
 a:visited {
-  color: cadetblue;
+  color: #1b3e6f;
 }
 a:hover {
   color: white;
 }
 a:active {
-  color: cadetblue;
+  color: #1b3e6f;
 }

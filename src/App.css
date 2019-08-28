@@ -1,9 +1,13 @@
+/* colors
+~~ primary: #46709a secondary: #1b3e6f third: #fcb900
+*/
+
 .App {
   display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background-color: #282c34;
+  background-color: #46709a;
   color: white;
   overflow: auto;
 }
@@ -59,7 +63,7 @@
 }
 .slide {
   width: 100%;
-  max-width: 927px;
+  max-width: 840px; /* original size is 1400x935 */
 }
 .slide-wrapper {
   display: flex;
@@ -67,7 +71,7 @@
   justify-content: center;
 }
 .slide-container {
-  max-width: 210px; /* original width is 840x1640 */
+  max-width: 210px; /* original size is 840x1640 */
   height: auto;
 }
 .slide-container__half {

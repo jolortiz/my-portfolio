@@ -1,7 +1,7 @@
 import React from 'react';
 import backarrow from './assets/back-arrow.svg';
 import rightarrow from './assets/right-arrow.svg';
-import rootifyscreenshot from './assets/rootfiy-screenshot.png';
+import rootifyscreenshot from './assets/rootify-screenshot.png';
 import eatupscreenshot1 from './assets/eatup-screenshot-1.png';
 import eatupscreenshot2 from './assets/eatup-screenshot-2.png';
 import profile from './assets/profile.gif';
@@ -20,7 +20,7 @@ const MYDB = [
   {
     imgUrl: eatupscreenshot1, title: "EatUp", imgUrl2: eatupscreenshot2, siteUrl: 'https://www.eatup.app/', 
     gitUrl: 'https://github.com/jolortiz/eatup_marketing_website',
-    text: "EatUp is a mobile application that uses AI to help consumers find new places to eat in their area. EatUp is built with Python, Flask, PostgreSQL, React Native."
+    text: "EatUp is a mobile application for Android and iOS that uses AI to help consumers find new places to eat in their area. EatUp is built with React Native, Python, Flask, and PostgreSQL."
   },
   {
     imgUrl: rootifyscreenshot, title: "Rootify", siteUrl: 'https://rootify.io/', gitUrl: 'https://github.com/tilevi/Rootify',
@@ -30,7 +30,7 @@ const MYDB = [
 
 const ImageSlide = ({ index }) => {
   const customStyles = {
-    maxWidth: (MYDB[index].title === "EatUp") ? "420px" : "927px",
+    maxWidth: (MYDB[index].title === "EatUp") ? "420px" : "840px",
   };
   return <div style={customStyles}>
     { MYDB[index].imgUrl2 === undefined ? 
@@ -94,9 +94,9 @@ export default class App extends React.Component {
                 <h1>Jonathan Ortiz</h1>
                 <h2>Full Stack Developer</h2>
                 <ul className="profile__list">
-                  <li>Experienced building Web and Mobile Applications.</li>
-                  <li>B.S. in Computer Science from the University of California, Santa Cruz class of 2018.</li>
-                  <li>Passion for creating intuitive, dynamic user experiences.</li>
+                  <li>Experienced building Web and Mobile Applications</li>
+                  <li>B.S. in Computer Science from the University of California, Santa Cruz class of 2018</li>
+                  <li>Passion for creating intuitive, dynamic user experiences</li>
                 </ul>
                 <div>
                   <a href="https://github.com/jolortiz" target="_blank" rel="noopener noreferrer"><img className="profile__link" src={github} alt="GitHub"/></a>
