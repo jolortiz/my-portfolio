@@ -5,23 +5,8 @@
   justify-content: center;
   background-color: #282c34;
   color: white;
+  overflow: auto;
 }
-/* TODO: delete this css
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
 
 .profile {
   text-align: center;
@@ -45,8 +30,9 @@
   margin: auto;
   display: flex;
   flex-direction: row;
-  height: 100vh;
   min-width: 800px;
+  min-height: 100vh;
+  
 }
 .panel {
   display: flex;
@@ -65,7 +51,6 @@
 }
 .carousel {
   padding: 0 20px;
-  /* background-color: cornflowerblue; */
   display: flex;
   flex-grow: 1;
   align-items: center;
@@ -74,19 +59,20 @@
 }
 .slide {
   width: 100%;
-  /* TODO:
-  max-width: 800px;
-  margin: auto; */
+  max-width: 927px;
 }
-.slide-container {
+.slide-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  max-width: 760px;
-  margin: auto;
+  justify-content: center;
+}
+.slide-container {
+  max-width: 210px; /* original width is 840x1640 */
+  height: auto;
 }
 .slide-container__half {
-  width: 48%;
+  height: 100%;
+  width: 100%;
 }
 .slide__github {
   height: 30px;
@@ -97,16 +83,6 @@
   flex-direction: row;
   align-items: center;
 }
-/* .slide-container__half.left {
-  display: flex;
-  width: 48%;
-  align-self: flex-start;
-}
-.slide-container__half.right {
-  display: flex;
-  width: 48%;
-  align-self: flex-end;
-} */
 
 @media screen and (max-width: 800px) {
   .container {
