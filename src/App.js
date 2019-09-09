@@ -4,7 +4,7 @@ import rightarrow from './assets/right-arrow.svg';
 import rootifyscreenshot from './assets/rootify-screenshot.png';
 import eatupscreenshot1 from './assets/eatup-screenshot-1.png';
 import eatupscreenshot2 from './assets/eatup-screenshot-2.png';
-import profile from './assets/head.png';
+import profile from './assets/headshot2018.png';
 import github from './assets/github.png';
 import linkedin from './assets/linkedin.png'
 import './App.css';
