@@ -72,7 +72,6 @@
   justify-content: center;
 }
 .slide-container {
-  max-width: 210px; /* original size is 840x1640 */
   height: auto;
 }
 .slide-container__half {
@@ -89,11 +88,21 @@
   align-items: center;
 }
 
-/* all styles for the last slide (list of links) */
+/* all styles for the bullet link list */
 .list {
   max-width: 510px;
   width: 100%;
   word-wrap: break-word;
+}
+.display-inline {
+  display: inline-block;
+}
+.list__github {
+  height: 20px;
+  margin-left: 10px;
+}
+.list__text {
+  margin: 8px 0;
 }
 
 @media screen and (max-width: 800px) {
