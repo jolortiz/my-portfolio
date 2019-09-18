@@ -12,8 +12,11 @@ import d3screenshot2 from './assets/d3-screenshot-2.png';
 import lakersscreenshot from './assets/lakers-screenshot.png'
 
 import './App.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import Image from './components/Image/index.js';
+import Slider from "react-slick";
 
 /*
 ~~ A simple react app to show some of my recent work.
@@ -89,7 +92,7 @@ const ImageSlide = ({ index }) => {
         maxWidth = "420px";
   }
   const customStyles = {
-    maxWidth: maxWidth,
+    maxWidth: maxWidth, margin: "auto",
   };
   return <div style={customStyles}>
     { MYDB[index].imgUrl2 === undefined ? 
@@ -156,6 +159,47 @@ const ProfileSlide = ({ index }) => {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
+    this.prev = this.prev.bind(this);
+    this.next = this.next.bind(this);
+    this.slider = React.createRef();
+  }
+  prev() {
+    this.slider.slickPrev();
+  }
+  next() {
+    this.slider.slickNext();
+  }
+  render() {
+    var settings = {
+      accessibility: false,
+      dots: false,
+      arrows: false,
+      /* adaptiveHeight: true, */
+      className: "slider"
+    };
+    return (
+      <div className="container">
+        <div className="panel">
+          <img className="panel__button" src={backarrow} onClick={this.prev} alt="Back"/>
+        </div>
+        <Slider ref={c => (this.slider = c)} {...settings}>
+          <ProfileSlide index={0}/>
+          <ImageSlide index={1}/>
+          <ImageSlide index={2}/>
+          <ImageSlide index={3}/>
+          <ImageSlide index={4}/>
+        </Slider>
+        <div className="panel right">
+          <img className="panel__button" src={rightarrow} onClick={this.next} alt="Next"/>
+        </div>
+      </div>
+    );
+  }
+}
+
+/* export default class App extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       currentIndex: 0
     };
@@ -202,4 +246,4 @@ export default class App extends React.Component {
       </div>
     );
   }
-}
+} */

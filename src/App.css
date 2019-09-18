@@ -16,6 +16,7 @@
 .profile {
   text-align: center;
   max-width: 500px;
+  margin: auto;
 }
 .profile__img {
   max-width: 200px;
@@ -31,29 +32,14 @@
   width: 70px;
 }
 
-.container {
+/* .container {
   margin: auto;
   display: flex;
   flex-direction: row;
   min-width: 800px;
   min-height: 100vh;
   
-}
-.panel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.left {
-  padding-left: 20px;
-}
-.right {
-  padding-right: 20px;
-}
-.panel__button {
-  width: 100px;
-  height: 100px;
-}
+} */
 .carousel {
   padding: 0 20px;
   display: flex;
@@ -104,6 +90,36 @@
 .list__text {
   margin: 8px 0;
 }
+
+
+/* App styles */
+.container {
+  background: #46709a;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  color: white;
+  padding: 0 24px;
+  align-items: center;
+}
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.panel__button {
+  width: 100px;
+  height: 100px;
+}
+.slider {
+  min-height: 0px; /* fixes bug with flexbox */
+  min-width: 0px;  /* "" */
+  padding: 24px 48px;
+}
+.slick-slide img {
+  display: inline-block !important;
+}
+
 
 @media screen and (max-width: 800px) {
   .container {
