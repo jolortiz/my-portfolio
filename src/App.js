@@ -64,7 +64,7 @@ const MYDB = [
   },
   {
     id: "rootify",
-    imgUrl: rootifyscreenshot, title: "Rootify", siteUrl: 'https://rootify.io/', gitUrl: 'https://github.com/tilevi/Rootify',
+    imgUrl: rootifyscreenshot, title: "Rootify", gitUrl: 'https://github.com/tilevi/Rootify',
     text: "Rootify allows users with Spotify accounts to see their listening history visualized and explore new music. This project was built with Node.js, D3.js for data visualization, and the Spotify API for user info."
   }
 ];
@@ -77,7 +77,7 @@ const ImageSlide = ({ index }) => {
       maxWidth = "420px";
       break;
     case "d3":
-      maxWidth = "900px";
+      maxWidth = "600px";
       break;
     case "rootify":
       maxWidth = "840px";
