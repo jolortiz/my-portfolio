@@ -27,7 +27,7 @@ const MYDB = [
   },
   {
     id: "eatup",
-    imgUrl: eatupscreenshot1, title: "EatUp", imgUrl2: eatupscreenshot2, siteUrl: 'https://www.eatup.app/', 
+    imgUrl: eatupscreenshot1, title: "EatUp", imgUrl2: eatupscreenshot2, siteUrl: 'https://jolortiz.github.io/eatup_marketing_website/', 
     gitUrl: 'https://github.com/jolortiz/eatup_marketing_website',
     text: "EatUp is a mobile application for Android and iOS that uses AI to help consumers find new places to eat in their area. EatUp is built with React Native, Python, Flask, and PostgreSQL."
   },
