@@ -3,17 +3,21 @@
 ~~ primary: #46709a, secondary: #1b3e6f, third: #fcb900
 */
 
-.App {
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
+/* container for the entire app */
+.app {
   background-color: #46709a;
   color: white;
   overflow: auto;
 }
 
+/* styles for intro profile */
 .profile {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile__container {
   text-align: center;
   max-width: 500px;
 }
@@ -31,14 +35,6 @@
   width: 70px;
 }
 
-.container {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  min-width: 800px;
-  min-height: 100vh;
-  
-}
 .panel {
   display: flex;
   align-items: center;
@@ -50,16 +46,10 @@
 .right {
   padding-right: 20px;
 }
-.panel__button {
-  width: 100px;
-  height: 100px;
-}
-.carousel {
-  padding: 20px;
+
+.img-container {
+  min-height: 100vh;
   display: flex;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 .slide {
@@ -106,16 +96,8 @@
 }
 
 @media screen and (max-width: 800px) {
-  .container {
-    flex-direction: column;
-    min-width: 320px; /* the smallest size this screen can get */
-  }
   .panel {
     width: 100%;
-  }
-  .panel__button {
-    width: 60px;
-    height: 60px;
   }
   .left {
     padding: 10px 0 0 0;

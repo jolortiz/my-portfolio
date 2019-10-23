@@ -91,7 +91,7 @@ const ImageSlide = ({ index }) => {
   const customStyles = {
     maxWidth: maxWidth,
   };
-  return <div style={customStyles}>
+  return <div className="img-container" style={customStyles}>
     { MYDB[index].imgUrl2 === undefined ? 
       <Image className="slide" src={MYDB[index].imgUrl} alt={MYDB[index].title}/> : 
       <div className="slide-wrapper">
@@ -137,68 +137,32 @@ const LinksList = ({ index }) => {
 // this is the first slide. contains bio info
 const ProfileSlide = ({ index }) => {
   return <div className="profile">
-    <Image className="profile__img" src={profile} alt="Profile"/>
-    <h1>{MYDB[index].name}</h1>
-    <h2>{MYDB[index].title}</h2>
-    <ul className="profile__list">
-      <li>{MYDB[index].point1}</li>
-      <li>{MYDB[index].point2}</li>
-      <li>{MYDB[index].point3}</li>
-    </ul>
-    <div>
-      <a href={MYDB[index].gitUrl} target="_blank" rel="noopener noreferrer"><img className="profile__link" src={github} alt="GitHub"/></a>
-      <a href={MYDB[index].linkedInUrl} target="_blank" rel="noopener noreferrer"><img className="profile__link" src={linkedin} alt="LinkedIn"/></a>
+    <div className="profile__container">
+      <Image className="profile__img" src={profile} alt="Profile"/>
+      <h1>{MYDB[index].name}</h1>
+      <h2>{MYDB[index].title}</h2>
+      <ul className="profile__list">
+        <li>{MYDB[index].point1}</li>
+        <li>{MYDB[index].point2}</li>
+        <li>{MYDB[index].point3}</li>
+      </ul>
+      <div>
+        <a href={MYDB[index].gitUrl} target="_blank" rel="noopener noreferrer"><img className="profile__link" src={github} alt="GitHub"/></a>
+        <a href={MYDB[index].linkedInUrl} target="_blank" rel="noopener noreferrer"><img className="profile__link" src={linkedin} alt="LinkedIn"/></a>
+      </div>
     </div>
   </div>;
 }
 
 // my one page app
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentIndex: 0
-    };
-    this.nextSlide = this.nextSlide.bind(this);
-    this.previousSlide = this.previousSlide.bind(this);
-  }
-  previousSlide() {
-    const lastIndex = MYDB.length - 1;
-    const { currentIndex } = this.state;
-    const shouldResetIndex = currentIndex === 0;
-    const index = shouldResetIndex ? lastIndex : currentIndex - 1;
-    this.setState({
-      currentIndex: index
-    });
-  }
-  nextSlide() {
-    const lastIndex = MYDB.length - 1;
-    const { currentIndex } = this.state;
-    const shouldResetIndex = currentIndex === lastIndex;
-    const index = shouldResetIndex ? 0 : currentIndex + 1;
-    this.setState({
-      currentIndex: index
-    });
-  }
   render() {
     return (
-      <div className="App">
-        <div className="container">
-          <div className="panel left">
-            <img className="panel__button" src={backarrow} onClick={this.previousSlide} alt="Back"/>
-          </div>
-          <div className="carousel">
-            { this.state.currentIndex === 0 &&
-              <ProfileSlide index={this.state.currentIndex}/>
-            }
-            { this.state.currentIndex > 0 &&
-              <ImageSlide index={this.state.currentIndex}/>
-            }
-          </div>
-          <div className="panel right">
-            <img className="panel__button" src={rightarrow} onClick={this.nextSlide} alt="Next"/>
-          </div>
-        </div>
+      <div className="app">
+        <ProfileSlide index={0}/>
+        <ImageSlide index={1}/>
+        <ImageSlide index={2}/>
+        <ImageSlide index={3}/>
       </div>
     );
   }
