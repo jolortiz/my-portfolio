@@ -136,7 +136,7 @@ const LinksList = ({ index }) => {
 
 // this is the first slide. contains bio info
 const ProfileSlide = ({ index }) => {
-  return <div className="profile">
+  return <div className="section">
     <div className="profile__container">
       <Image className="profile__img" src={profile} alt="Profile"/>
       <h1>{MYDB[index].name}</h1>
