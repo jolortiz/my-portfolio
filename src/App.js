@@ -9,7 +9,7 @@ import github from './assets/github.png';
 import linkedin from './assets/linkedin.png'
 import d3screenshot1 from './assets/d3-screenshot-1.png';
 import d3screenshot2 from './assets/d3-screenshot-2.png';
-import lakersscreenshot from './assets/lakers-screenshot.png'
+import lakersscreenshot from './assets/lakers-capture.png'
 
 import './App.css';
 
@@ -71,49 +71,59 @@ const MYDB = [
 
 // template for the project slides
 const ImageSlide = ({ index }) => {
-  let maxWidth;
+  let maxWidth, backgroundColor, color;
   switch (MYDB[index].id) {
     case "eatup":
       maxWidth = "420px";
+      backgroundColor = "#ff7833";
       break;
     case "d3":
       maxWidth = "600px";
+      backgroundColor = "#ffffff";
+      color = "#000000";
       break;
     case "rootify":
-      maxWidth = "840px";
+      maxWidth = "605px";
+      backgroundColor = "#4B9877";
       break;
     case "lakers":
       maxWidth = "605px";
+      backgroundColor = "#745c97";
       break;
     default:
         maxWidth = "420px";
   }
-  const customStyles = {
+  const proj__extra = {
+    backgroundColor: backgroundColor, color: color,
+  };
+  const container__extra = {
     maxWidth: maxWidth,
   };
-  return <div className="img-container" style={customStyles}>
-    { MYDB[index].imgUrl2 === undefined ? 
-      <Image className="slide" src={MYDB[index].imgUrl} alt={MYDB[index].title}/> : 
-      <div className="slide-wrapper">
-        <div className="slide-container">
-          <Image className="slide-container__half" src={MYDB[index].imgUrl} alt={MYDB[index].title}/>
+  return <div className="section proj" style={proj__extra}>
+    <div className="container" style={container__extra}>
+      { MYDB[index].imgUrl2 === undefined ? 
+        <Image className="slide" src={MYDB[index].imgUrl} alt={MYDB[index].title}/> : 
+        <div className="slide-wrapper">
+          <div className="slide-container">
+            <Image className="slide-container__half" src={MYDB[index].imgUrl} alt={MYDB[index].title}/>
+          </div>
+          <div className="slide-container">
+            <Image className="slide-container__half" src={MYDB[index].imgUrl2} alt={MYDB[index].title}/>
+          </div>
         </div>
-        <div className="slide-container">
-          <Image className="slide-container__half" src={MYDB[index].imgUrl2} alt={MYDB[index].title}/>
-        </div>
+      }
+      <div className="slide__title">
+        { MYDB[index].siteUrl !== undefined ? 
+          <a href={MYDB[index].siteUrl} target="_blank" rel="noopener noreferrer"><h2>{MYDB[index].title}</h2></a> : 
+          <h2>{MYDB[index].title}</h2>
+        }
+        { MYDB[index].gitUrl !== undefined ? 
+          <a href={MYDB[index].gitUrl} target="_blank" rel="noopener noreferrer"><img className="slide__github" src={github} alt="GitHub"/></a>: null
+        }
       </div>
-    }
-    <div className="slide__title">
-      { MYDB[index].siteUrl !== undefined ? 
-        <a href={MYDB[index].siteUrl} target="_blank" rel="noopener noreferrer"><h2>{MYDB[index].title}</h2></a> : 
-        <h2>{MYDB[index].title}</h2>
-      }
-      { MYDB[index].gitUrl !== undefined ? 
-        <a href={MYDB[index].gitUrl} target="_blank" rel="noopener noreferrer"><img className="slide__github" src={github} alt="GitHub"/></a>: null
-      }
+      <p className="slide__text">{MYDB[index].text}</p>
+      { MYDB[index].links !== undefined ? <LinksList index={index}/> : null }
     </div>
-    <p className="slide__text">{MYDB[index].text}</p>
-    { MYDB[index].links !== undefined ? <LinksList index={index}/> : null }
   </div>;
 };
 
@@ -137,10 +147,10 @@ const LinksList = ({ index }) => {
 // this is the first slide. contains bio info
 const ProfileSlide = ({ index }) => {
   return <div className="section">
-    <div className="profile__container">
+    <div className="container profile">
       <Image className="profile__img" src={profile} alt="Profile"/>
-      <h1>{MYDB[index].name}</h1>
-      <h2>{MYDB[index].title}</h2>
+      <h1 className="profile__name">{MYDB[index].name}</h1>
+      <h2 className="profile__title">{MYDB[index].title}</h2>
       <ul className="profile__list">
         <li>{MYDB[index].point1}</li>
         <li>{MYDB[index].point2}</li>
@@ -163,6 +173,7 @@ export default class App extends React.Component {
         <ImageSlide index={1}/>
         <ImageSlide index={2}/>
         <ImageSlide index={3}/>
+        <ImageSlide index={4}/>
       </div>
     );
   }

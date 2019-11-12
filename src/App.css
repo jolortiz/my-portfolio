@@ -3,7 +3,7 @@
 ~~ primary: #46709a, secondary: #1b3e6f, third: #fcb900
 */
 
-/* container for the entire app */
+/* container for the app */
 .app {
   background-color: #46709a;
   color: white;
@@ -17,13 +17,23 @@
   justify-content: center;
   align-items: center;
 }
-.profile__container {
-  text-align: center;
-  max-width: 500px;
+.container {
   margin: 24px 16px;
+}
+
+/* profile styles */
+.profile {
+  max-width: 500px;
+  text-align: center;
 }
 .profile__img {
   max-width: 200px;
+}
+.profile__name {
+  margin: 0;
+}
+.profile__title {
+  margin: 0;
 }
 .profile__list {
   text-align: left;
@@ -36,26 +46,10 @@
   width: 70px;
 }
 
-.panel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.left {
-  padding-left: 20px;
-}
-.right {
-  padding-right: 20px;
-}
-
-.img-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+/* project info section */
 .slide {
   width: 100%;
-  max-width: 840px; /* original size is 1400x935 */
+  max-width: 605px; /* original size is 1363 × 848 */
 }
 .slide-wrapper {
   display: flex;
@@ -96,6 +90,8 @@
   margin: 8px 0;
 }
 
+
+/* media querys */
 @media screen and (max-width: 800px) {
   .panel {
     width: 100%;
@@ -111,5 +107,11 @@
   }
   .profile__img {
     max-width: 150px;
+  }
+}
+
+@media screen and (min-height: 1080px) {
+  .proj {
+    min-height: 1080px; /* don't let project sections get too large */
   }
 }
