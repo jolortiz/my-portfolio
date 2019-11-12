@@ -21,7 +21,7 @@ import Image from './components/Image/index.js';
 // my information
 const MYDB = [
   {
-    gitUrl: 'https://github.com/jolortiz', linkedInUrl: 'https://www.linkedin.com/in/jonathan-ortiz-1254b4144/', name: "Jonathan Ortiz", title: "Software Engineer", point1: "Experienced building and maintaining Web and Mobile Applications", point2: "B.S. in Computer Science from the University of California, Santa Cruz class of 2018", point3: "Passion for creating, learning, and collaborating"
+    gitUrl: 'https://github.com/jolortiz', linkedInUrl: 'https://www.linkedin.com/in/jonathan-ortiz-1254b4144/', name: "Jonathan Ortiz", title: "Software Engineer", point1: "Experienced building and improving Web and Mobile Applications", point2: "B.S. in Computer Science from the University of California, Santa Cruz class of 2018", point3: "Passion for creating, learning, and collaborating"
   },
   {
     id: "eatup",
@@ -32,23 +32,23 @@ const MYDB = [
   {
     id: "lakers", 
     imgUrl: lakersscreenshot, title: "Lakers Websites",
-    text: "Lakers orginization websites include Los Angeles Lakers, South Bay Lakers, and Lakers Gaming. Lakers.com uses Drupal for content management and front end libaries jQuery and Bootstrap, while the South Bay Lakers and Lakers Gaming sites run on Wordpress.",
+    text: "The Los Angeles Lakers' digital properties include all websites for affiliated teams. Lakers.com uses Drupal for content management and various libaries like jQuery and Bootstrap for the front end, while the South Bay Lakers and Lakers Gaming are Wordpress hosted sites.",
     links: [
       {
-        title: 'Website for the Los Angeles Lakers', siteUrl: 'https://www.nba.com/lakers/'
+        title: 'Los Angeles Lakers', siteUrl: 'https://www.nba.com/lakers/'
       },
       {
-        title: 'Website for the South Bay Lakers', siteUrl: 'https://southbay.gleague.nba.com'
+        title: 'South Bay Lakers', siteUrl: 'https://southbay.gleague.nba.com'
       },
       {
-        title: 'Website for Lakers Gaming', siteUrl: 'https://lakersgaming.nba.com'
+        title: 'Lakers Gaming', siteUrl: 'https://lakersgaming.nba.com'
       },
     ]
   },
   {
     id: "d3",
     imgUrl: d3screenshot1, title: "D3.js Projects", imgUrl2: d3screenshot2,
-    text: "These are two data visualization projects built with the Javascript library D3. The left image is an interactive graphical representation of Hispanic education and voting statistics, while the right is a map representation of projected population in Colombia.",
+    text: "The above images are two different data visualization projects built with the Javascript library D3. The left image is an interactive graphical representation of Hispanic education and voting statistics, while the right is a map representation of projected population in Colombia.",
     links: [
       {
         title: "Education & Voting Power of Hispanics", siteUrl: 'https://jolortiz.github.io/EducationVotingforHispanicsinUS/',
