@@ -29,15 +29,9 @@
 .profile__img {
   max-width: 200px;
 }
-.profile__name {
-  margin: 0;
-}
-.profile__title {
-  margin: 0;
-}
 .profile__list {
   text-align: left;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 .profile__list > li {
   margin-bottom: 10px;
@@ -45,32 +39,47 @@
 .profile__link {
   width: 70px;
 }
+@media screen and (max-width: 800px) {
+  .profile__link {
+    width: 50px;
+  }
+  .profile__img {
+    max-width: 150px;
+  }
+}
 
 /* project info section */
-.slide {
+.proj__img {
   width: 100%;
   max-width: 605px; /* original size is 1363 × 848 */
+  margin-bottom: 16px;
 }
-.slide-wrapper {
+.proj__double {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 16px;
 }
-.slide-container {
+.proj__container {
   height: auto;
 }
-.slide-container__half {
+.proj__img--half {
   height: 100%;
   width: 100%;
 }
-.slide__github {
+.proj__github {
   height: 30px;
   margin-left: 10px;
 }
-.slide__title {
+.proj__title {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+@media screen and (min-height: 1080px) {
+  .proj {
+    min-height: 1080px; /* don't let project sections get too large */
+  }
 }
 
 /* all styles for the bullet link list */
@@ -88,30 +97,4 @@
 }
 .list__text {
   margin: 8px 0;
-}
-
-
-/* media querys */
-@media screen and (max-width: 800px) {
-  .panel {
-    width: 100%;
-  }
-  .left {
-    padding: 10px 0 0 0;
-  }
-  .right {
-    padding: 0 0 10px 0;
-  }
-  .profile__link {
-    width: 50px;
-  }
-  .profile__img {
-    max-width: 150px;
-  }
-}
-
-@media screen and (min-height: 1080px) {
-  .proj {
-    min-height: 1080px; /* don't let project sections get too large */
-  }
 }

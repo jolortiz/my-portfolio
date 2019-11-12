@@ -1,6 +1,4 @@
 import React from 'react';
-import backarrow from './assets/back-arrow.svg';
-import rightarrow from './assets/right-arrow.svg';
 import rootifyscreenshot from './assets/rootify-screenshot.png';
 import eatupscreenshot1 from './assets/eatup-screenshot-1.png';
 import eatupscreenshot2 from './assets/eatup-screenshot-2.png';
@@ -71,7 +69,7 @@ const MYDB = [
 
 // template for the project slides
 const ImageSlide = ({ index }) => {
-  let maxWidth, backgroundColor, color;
+  let maxWidth, backgroundColor, color; // these max-widths keep containers in check
   switch (MYDB[index].id) {
     case "eatup":
       maxWidth = "420px";
@@ -102,26 +100,28 @@ const ImageSlide = ({ index }) => {
   return <div className="section proj" style={proj__extra}>
     <div className="container" style={container__extra}>
       { MYDB[index].imgUrl2 === undefined ? 
-        <Image className="slide" src={MYDB[index].imgUrl} alt={MYDB[index].title}/> : 
-        <div className="slide-wrapper">
-          <div className="slide-container">
-            <Image className="slide-container__half" src={MYDB[index].imgUrl} alt={MYDB[index].title}/>
+        <Image className="proj__img" src={MYDB[index].imgUrl} alt={MYDB[index].title}/> : 
+        <div className="proj__double">
+          <div className="proj__container">
+            <Image className="proj__img--half" src={MYDB[index].imgUrl} alt={MYDB[index].title}/>
           </div>
-          <div className="slide-container">
-            <Image className="slide-container__half" src={MYDB[index].imgUrl2} alt={MYDB[index].title}/>
+          <div className="proj__container">
+            <Image className="proj__img--half" src={MYDB[index].imgUrl2} alt={MYDB[index].title}/>
           </div>
         </div>
       }
-      <div className="slide__title">
+      <div className="proj__title">
         { MYDB[index].siteUrl !== undefined ? 
-          <a href={MYDB[index].siteUrl} target="_blank" rel="noopener noreferrer"><h2>{MYDB[index].title}</h2></a> : 
+          <a href={MYDB[index].siteUrl} target="_blank" rel="noopener noreferrer">
+            <h2>{MYDB[index].title}</h2></a> : 
           <h2>{MYDB[index].title}</h2>
         }
         { MYDB[index].gitUrl !== undefined ? 
-          <a href={MYDB[index].gitUrl} target="_blank" rel="noopener noreferrer"><img className="slide__github" src={github} alt="GitHub"/></a>: null
+          <a href={MYDB[index].gitUrl} target="_blank" rel="noopener noreferrer">
+            <img className="proj__github" src={github} alt="GitHub"/></a>: null
         }
       </div>
-      <p className="slide__text">{MYDB[index].text}</p>
+      <p className="proj__text">{MYDB[index].text}</p>
       { MYDB[index].links !== undefined ? <LinksList index={index}/> : null }
     </div>
   </div>;
@@ -149,8 +149,8 @@ const ProfileSlide = ({ index }) => {
   return <div className="section">
     <div className="container profile">
       <Image className="profile__img" src={profile} alt="Profile"/>
-      <h1 className="profile__name">{MYDB[index].name}</h1>
-      <h2 className="profile__title">{MYDB[index].title}</h2>
+      <h1>{MYDB[index].name}</h1>
+      <h2>{MYDB[index].title}</h2>
       <ul className="profile__list">
         <li>{MYDB[index].point1}</li>
         <li>{MYDB[index].point2}</li>
